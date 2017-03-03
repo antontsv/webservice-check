@@ -24,3 +24,5 @@ fi;
 silent_exec_with_title 'Installing NodeJS' brew install node
 nodejs_version=$(node --version 2>/dev/null) || fatal "Cannot get NodeJS version"
 msg "NodeJS version $nodejs_version"
+silent_exec_with_title 'Install Mocha' npm install --global mocha
+has_command 'mocha' || fatal 'Cannot find mocha command. Install was not successful'
