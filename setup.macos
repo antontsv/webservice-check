@@ -1,0 +1,26 @@
+#!/usr/bin/env awesome-bash
+
+awesome_shell_help <<_HELP_
+
+Checks and installs dependencies for webservice-check project
+
+Usage: $awesome_shell_script_name
+
+_HELP_
+#awesome-shell ref:6764e68
+
+awesome_shell_include system
+
+[ "$(uname)" == "Darwin" ] || fatal "Script is supposed to be run on Mac OS only"
+
+if ! has_command 'brew';then
+    function install_brew() {
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" <<< "\n"
+    }
+    silent_exec_with_title 'Installing Homebrew' install_brew
+    fatal_if_any_error 'Failed to install Homebrew'
+fi;
+
+silent_exec_with_title 'Installing NodeJS' brew install node
+nodejs_version=$(node --version 2>/dev/null) || fatal "Cannot get NodeJS version"
+msg "NodeJS version $nodejs_version"
