@@ -1,0 +1,22 @@
+{
+  "name": "webservice-check",
+  "version": "0.1.0",
+  "description": "REST web service checks library",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antontsv/webservice-check.git"
+  },
+  "author": {
+    "name": "Anton Tsviatkou",
+    "url": "https://github.com/antontsv"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "request": "*"
+  }
+}
