@@ -60,4 +60,3 @@ ResponseAsserter.prototype.done = function () {
 }
 
 module.exports = ResponseAsserter;
-
