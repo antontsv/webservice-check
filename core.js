@@ -2,7 +2,8 @@ const request = require('request').defaults(
     {
         headers: {
             'User-Agent': 'nodejs/request'
-        }
+        },
+        json: true
     }
 )
 var assert = require('assert');

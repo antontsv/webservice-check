@@ -34,6 +34,14 @@ ResponseAsserter.prototype.expectStatusCode = function (expectedStatusCode) {
     return this;
 }
 
+ResponseAsserter.prototype.expectJsonProperty = function (propertyName, propertyValue) {
+    self = this
+    this.scheduleAssertion(function () {
+        expect(self.body).to.have.property(propertyName, propertyValue);
+    })
+    return this;
+}
+
 ResponseAsserter.prototype.setResponseObject = function (res) {
     this.res = res
 }
