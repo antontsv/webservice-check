@@ -1,11 +1,13 @@
 const request = require('request').defaults(
     {
         headers: {
-            'User-Agent': 'nodejs/request'
+            'User-Agent': 'nodejs/request',
+            'Authorization': 'token ' + process.env.GITHUB_TOKEN
         },
         json: true
     }
 )
+
 var assert = require('assert');
 const apiHost = "api.github.com"
 var ResponseAsserter = require('./responseAsserter');

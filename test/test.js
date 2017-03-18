@@ -13,7 +13,8 @@ describe('GitHub API', function () {
             return core.get("repos/antontsv/webservice-check")
             .expectJsonProperty("id",82895274)
             .expectJsonProperty("private",false)
-            .expectStatusCode(200).done()
+            .expectStatusCode(200)
+            .done()
         });
 
     });
