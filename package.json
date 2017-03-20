@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "REST web service checks library",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha --reporter mochawesome"
+    "test": "node_modules/mocha/bin/mocha --reporter tap"
   },
   "repository": {
     "type": "git",
