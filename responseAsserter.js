@@ -1,5 +1,5 @@
 var assert = require('assert');
-var expect = require('Chai').expect;
+var expect = require('chai').expect;
 
 var ResponseAsserter = function () {
     this.ready = 0;
