@@ -15,9 +15,9 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "chai": "*",
+    "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "mochawesome": "^2.0.4",
-    "request": "*"
+    "request": "^2.81.0"
   }
 }
