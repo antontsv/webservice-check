@@ -19,9 +19,9 @@ ResponseAsserter.prototype.scheduleAssertion = function (check) {
     }
 }
 
-ResponseAsserter.prototype.executeChecks = function (check) {
-    while (c = this.checks.pop()) { 
-        c();
+ResponseAsserter.prototype.executeChecks = function () {
+    while (check = this.checks.pop()) {
+        check();
         this.checkCompleted();
     }
 }

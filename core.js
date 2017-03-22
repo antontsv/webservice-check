@@ -34,11 +34,7 @@ CoreHTTPServiceTest.prototype.post = function (endpointURI, data) {
     request({
         url: "https://" + apiHost + "/" + endpointURI,
         method: "POST",
-        json: data,
-        headers: {
-            'User-Agent': 'nodejs/request',
-            'Authorization': 'token ' + process.env.GITHUB_TOKEN
-        },
+        json: data
     }, function (err, res, body) {
         if (err != null) {
             assert.fail("Cannot reach web service endpoint", err)
