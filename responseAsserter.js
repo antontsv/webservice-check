@@ -55,7 +55,7 @@ ResponseAsserter.prototype.setReady = function () {
 
 ResponseAsserter.prototype.checkCompleted = function () {
     if (self.donePromiseResolve!= undefined && this.checks.length <= 0) {
-        self.donePromiseResolve("test case completed execution");
+        self.donePromiseResolve({res: this.res, body: this.body});
     }
 }
 
