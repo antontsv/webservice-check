@@ -29,3 +29,27 @@ CoreHTTPServiceTest.prototype.get = function (endpointURI) {
     return asserter;
 }
 
+CoreHTTPServiceTest.prototype.post = function (endpointURI, data) {
+    var asserter = new ResponseAsserter();
+    request({
+        url: "https://" + apiHost + "/" + endpointURI,
+        method: "POST",
+        json: data,
+        headers: {
+            'User-Agent': 'nodejs/request',
+            'Authorization': 'token ' + process.env.GITHUB_TOKEN
+        },
+    }, function (err, res, body) {
+        if (err != null) {
+            assert.fail("Cannot reach web service endpoint", err)
+        }
+        if(res.statusCode != 201) {
+            assert.fail(body)
+        }
+        asserter.setResponseObject(res)
+        asserter.setResponseBody(body)
+        asserter.setReady()
+    });
+    return asserter;
+}
+
