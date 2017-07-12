@@ -13,8 +13,7 @@ var ResponseAsserter = function () {
 
 ResponseAsserter.prototype.scheduleAssertion = function (check) {
     this.checks.push(check);
-    if (this.ready <= 0) {
-    } else {
+    if (this.ready > 0) {
         this.executeChecks();
     }
 }
